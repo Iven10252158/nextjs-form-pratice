@@ -1,0 +1,12 @@
+.w-full {
+    width: 100%;
+}
+.pointer {
+    cursor: pointer;
+}
+.mt-4 {
+    margin-top: 1rem;
+}
+.border-red {
+    border: 1px solid red;
+}
