@@ -1,0 +1,95 @@
+.card-container {
+    border: 1px solid salmon;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f7f9fc;
+  }
+  
+  .card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card-header h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+  
+  .card-date {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #999;
+  }
+  
+  .card-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* RWD 樣式 */
+  
+  /* 桌機版：五個一排 */
+  @media (min-width: 1200px) {
+    .card-container {
+      justify-content: flex-start; /* 卡片靠左對齊 */
+      gap: 20px;
+    }
+  }
+  
+  /* 平板端：兩行靠左排列 */
+  @media (max-width: 1199px) and (min-width: 768px) {
+    .card-container {
+      justify-content: flex-start; /* 卡片靠左對齊 */
+      gap: 16px;
+    }
+  
+    .card-container > .card:nth-child(1n + 6) {
+      margin-top: 20px; /* 第二行與第一行之間的間距 */
+    }
+  }
+  
+  /* 手機端：一行一個 */
+  @media (max-width: 767px) {
+    .card-container {
+      flex-direction: column; /* 垂直排列 */
+      align-items: center; /* 垂直居中 */
+    }
+  
+    .card {
+      width: 100%;
+      max-width: 300px; /* 避免卡片過大 */
+    }
+  
+    .card:not(:first-child) {
+      margin-top: 20px; /* 卡片間距 */
+    }
+  }
+  
