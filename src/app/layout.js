@@ -1,5 +1,8 @@
+
+console.log('layout');
 import localFont from "next/font/local";
 import "./globals.css";
+import ToastManager from "@/components/ToastManager";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,10 +21,13 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  console.log("RootLayout rendered"); // 新增日志
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <ToastManager>
+          {children} {/* 包裹所有的子組件 */}
+        </ToastManager>
       </body>
     </html>
   );
